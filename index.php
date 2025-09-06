@@ -25,3 +25,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             </ul>
         </nav>
     </header>
+    
+    <main>
+        <section class="hero-section">
+            <div class="hero-info">
+                <h2>Nombre de la Película Destacada</h2>
+                <p>Esta es una breve descripción de la película o serie que estamos destacando. Atrapa la atención del usuario.</p>
+                <button>▶ Reproducir</button>
+                <button>ℹ️ Más Información</button>
+            </div>
+        </section>

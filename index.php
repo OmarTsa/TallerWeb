@@ -35,3 +35,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 <button>ℹ️ Más Información</button>
             </div>
         </section>
+        
+        <section class="movies-row">
+            <h2>Mi Lista</h2>
+            <div class="movies-container">
+                <div class="movie-item"><img src="https://via.placeholder.com/200x300?text=Pelicula+1" alt="Película 1"></div>
+                <div class="movie-item"><img src="https://via.placeholder.com/200x300?text=Pelicula+2" alt="Película 2"></div>
+                <div class="movie-item"><img src="https://via.placeholder.com/200x300?text=Pelicula+3" alt="Película 3"></div>
+                <div class="movie-item"><img src="https://via.placeholder.com/200x300?text=Pelicula+4" alt="Película 4"></div>
+                <div class="movie-item"><img src="https://via.placeholder.com/200x300?text=Pelicula+5" alt="Película 5"></div>
+            </div>
+        </section>

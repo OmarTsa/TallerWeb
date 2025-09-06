@@ -46,3 +46,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 <div class="movie-item"><img src="https://via.placeholder.com/200x300?text=Pelicula+5" alt="Película 5"></div>
             </div>
         </section>
+
+        <section class="movies-row">
+            <h2>Tendencias</h2>
+            <div class="movies-container">
+                <div class="movie-item"><img src="https://via.placeholder.com/200x300?text=Pelicula+A" alt="Película A"></div>
+                <div class="movie-item"><img src="https://via.placeholder.com/200x300?text=Pelicula+B" alt="Película B"></div>
+                <div class="movie-item"><img src="https://via.placeholder.com/200x300?text=Pelicula+C" alt="Película C"></div>
+                <div class="movie-item"><img src="https://via.placeholder.com/200x300?text=Pelicula+D" alt="Película D"></div>
+                <div class="movie-item"><img src="https://via.placeholder.com/200x300?text=Pelicula+E" alt="Película E"></div>
+            </div>
+        </section>
+    </main>
+    
+    </body>
+</html>

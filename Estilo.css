@@ -7,3 +7,68 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Author     : otito
 */
 
+/* --- ESTILOS GENERALES Y TEMA OSCURO --- */
+body {
+    background-color: #141414; /* Color de fondo principal de Netflix */
+    color: #ffffff; /* Color de texto blanco */
+    font-family: Arial, sans-serif; /* Fuente simple y legible */
+    margin: 0;
+    padding: 0;
+}
+
+/* --- ENCABEZADO Y NAVEGACIÓN --- */
+.main-header {
+    padding: 20px 50px;
+    display: flex; /* Activa Flexbox para alinear elementos */
+    justify-content: space-between; /* Pone espacio entre el logo y los links */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.logo img {
+    height: 35px; /* Ajusta el tamaño del logo */
+}
+
+.nav-links {
+    list-style: none; /* Quita los puntos de la lista */
+    display: flex; /* Pone los links uno al lado del otro */
+}
+
+.nav-links li {
+    margin-left: 20px; /* Espacio entre cada link */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none; /* Quita el subrayado */
+    font-size: 1rem;
+}
+
+/* --- FILAS DE PELÍCULAS --- */
+.movies-row {
+    padding: 20px 50px;
+}
+
+.movies-container {
+    display: flex; /* ¡La clave para la fila horizontal! */
+    overflow-x: auto; /* Permite el scroll horizontal */
+    overflow-y: hidden; /* Oculta el scroll vertical */
+    padding-bottom: 20px; /* Espacio para la barra de scroll */
+}
+
+/* --- ESTILO PARA CADA PELÍCULA --- */
+.movie-item {
+    margin-right: 10px; /* Espacio entre cada póster */
+    transition: transform 0.2s; /* Animación suave */
+}
+
+.movie-item img {
+    width: 200px; /* Ancho fijo para los pósters */
+    height: 300px; /* Alto fijo para los pósters */
+    border-radius: 5px; /* Bordes ligeramente redondeados */
+}
+
+/* --- EFECTO AL PASAR EL MOUSE --- */
+.movie-item:hover {
+    transform: scale(1.1); /* Agranda un poco el póster */
+    cursor: pointer;
+}

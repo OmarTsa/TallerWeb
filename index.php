@@ -58,6 +58,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             </div>
         </section>
     </main>
-    
+     <footer class="main-footer">
+        <div class="footer-links">
+            <a href="#">Preguntas frecuentes</a>
+            <a href="#">Centro de ayuda</a>
+            <a href="#">Términos de uso</a>
+            <a href="#">Privacidad</a>
+        </div>
+        <p class="copyright">&copy; 2025 Mi Netflix Clon. Todos los derechos reservados.</p>
+    </footer>
     </body>
 </html>

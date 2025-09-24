@@ -72,3 +72,30 @@ body {
     transform: scale(1.1); /* Agranda un poco el póster */
     cursor: pointer;
 }
+
+.main-footer {
+    padding: 20px 50px;
+    border-top: 1px solid #333; /* Una línea sutil para separar */
+    text-align: center;
+    margin-top: 40px; /* Espacio para separarlo del último carrusel */
+}
+
+.footer-links {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #808080; /* Un gris para que no destaque tanto */
+    text-decoration: none;
+    margin: 0 15px; /* Espacio entre los enlaces */
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: white; /* Resalta al pasar el mouse */
+}
+
+.copyright {
+    color: #808080;
+    font-size: 0.8rem;
+}

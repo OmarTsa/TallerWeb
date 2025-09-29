@@ -99,3 +99,65 @@ body {
     color: #808080;
     font-size: 0.8rem;
 }
+
+
+@media screen and (max-width: 768px) {
+
+    /* --- Ajustes en el encabezado --- */
+    .main-header {
+        flex-direction: column; /* Pone el logo arriba y el menú abajo */
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        padding: 0;
+        margin-top: 15px; /* Espacio entre el logo y el menú */
+    }
+
+    .nav-links li {
+        margin: 0 10px; /* Reduce el espacio entre los links */
+    }
+
+    /* --- Ajustes en la sección Hero --- */
+    .hero-section {
+        padding: 0 20px; /* Reduce el padding lateral */
+    }
+
+    .hero-info h2 {
+        font-size: 2rem; /* Título más pequeño */
+    }
+
+    .hero-info p {
+        font-size: 1rem; /* Párrafo más pequeño */
+    }
+
+    .hero-info button {
+        padding: 10px 20px; /* Botones más pequeños */
+        font-size: 1rem;
+    }
+
+    /* --- Ajustes en las filas de películas --- */
+    .movies-row {
+        padding: 20px; /* Reduce el padding lateral */
+    }
+    
+    .movie-item img {
+        width: 150px; /* Pósters más pequeños */
+        height: 225px;
+    }
+
+    /* --- Ocultamos las flechas en móvil, ya que el scroll táctil es más natural --- */
+    .arrow {
+        display: none;
+    }
+
+    /* --- Ajustes en el Footer --- */
+    .footer-links {
+        display: flex;
+        flex-direction: column; /* Pone los links uno debajo del otro */
+    }
+
+    .footer-links a {
+        margin: 5px 0; /* Espacio vertical entre links */
+    }
+}

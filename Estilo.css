@@ -9,9 +9,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 /* --- ESTILOS GENERALES Y TEMA OSCURO --- */
 body {
-    background-color: #141414; /* Color de fondo principal de Netflix */
-    color: #ffffff; /* Color de texto blanco */
-    font-family: Arial, sans-serif; /* Fuente simple y legible */
+    background-color: #141414;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif; 
     margin: 0;
     padding: 0;
 }
@@ -19,145 +19,113 @@ body {
 /* --- ENCABEZADO Y NAVEGACIÓN --- */
 .main-header {
     padding: 20px 50px;
-    display: flex; /* Activa Flexbox para alinear elementos */
-    justify-content: space-between; /* Pone espacio entre el logo y los links */
-    align-items: center; /* Centra verticalmente los elementos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+.logo img { height: 35px; }
+.nav-links { list-style: none; display: flex; }
+.nav-links li { margin-left: 20px; }
+.nav-links a { color: white; text-decoration: none; font-size: 1rem; }
 
-.logo img {
-    height: 35px; /* Ajusta el tamaño del logo */
+/* --- SECCIÓN HERO (PELÍCULA DESTACADA) --- */
+.hero-section {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('https://image.tmdb.org/t/p/original/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg');
+    background-size: cover;
+    background-position: center top;
 }
-
-.nav-links {
-    list-style: none; /* Quita los puntos de la lista */
-    display: flex; /* Pone los links uno al lado del otro */
+.hero-info { max-width: 500px; }
+.hero-info h2 {    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out; /* Aplica la animación */
 }
-
-.nav-links li {
-    margin-left: 20px; /* Espacio entre cada link */
+.hero-info p { font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-out 0.3s; /* Aparece 0.3s después */
+    animation-fill-mode: backwards; /* Mantiene el estado inicial antes de empezar */
 }
-
-.nav-links a {
-    color: white;
-    text-decoration: none; /* Quita el subrayado */
-    font-size: 1rem;
+ 
+.hero-info button {
+    background-color: white; color: black; border: none; padding: 15px 30px;
+    border-radius: 5px; font-size: 1.1rem; font-weight: bold; cursor: pointer;
+    margin-right: 15px; transition: background-color 0.3s;
+    animation: fadeIn 1s ease-out 0.6s; /* Aparece 0.6s después */
+    animation-fill-mode: backwards;
 }
+.hero-info button:hover { background-color: rgba(255, 255, 255, 0.8); }
+.hero-info button:last-of-type { background-color: rgba(109, 109, 110, 0.7); color: white; }
+.hero-info button:last-of-type:hover { background-color: rgba(109, 109, 110, 0.4); }
 
 /* --- FILAS DE PELÍCULAS --- */
-.movies-row {
-    padding: 20px 50px;
-}
-
+.movies-row { padding: 20px 50px; }
+.carousel { position: relative; }
 .movies-container {
-    display: flex; /* ¡La clave para la fila horizontal! */
-    overflow-x: auto; /* Permite el scroll horizontal */
-    overflow-y: hidden; /* Oculta el scroll vertical */
-    padding-bottom: 20px; /* Espacio para la barra de scroll */
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
 }
+.movies-container::-webkit-scrollbar { display: none; } /* Oculta scrollbar en Chrome/Safari */
 
 /* --- ESTILO PARA CADA PELÍCULA --- */
-.movie-item {
-    margin-right: 10px; /* Espacio entre cada póster */
-    transition: transform 0.2s; /* Animación suave */
-}
+.movie-item { margin-right: 10px; transition: transform 0.2s; }
+.movie-item img { width: 200px; height: 300px; border-radius: 5px; }
+.movie-item:hover { transform: scale(1.1); cursor: pointer; }
 
-.movie-item img {
-    width: 200px; /* Ancho fijo para los pósters */
-    height: 300px; /* Alto fijo para los pósters */
-    border-radius: 5px; /* Bordes ligeramente redondeados */
+/* --- FLECHAS DEL CARRUSEL --- */
+.arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); color: white; border: none;
+    font-size: 3rem; padding: 0 10px; height: 300px; cursor: pointer;
+    z-index: 10; opacity: 0; transition: opacity 0.3s;
 }
+.carousel:hover .arrow { opacity: 1; }
+.left-arrow { left: 0; }
+.right-arrow { right: 0; }
 
-/* --- EFECTO AL PASAR EL MOUSE --- */
-.movie-item:hover {
-    transform: scale(1.1); /* Agranda un poco el póster */
-    cursor: pointer;
-}
-
+/* --- PIE DE PÁGINA --- */
 .main-footer {
-    padding: 20px 50px;
-    border-top: 1px solid #333; /* Una línea sutil para separar */
-    text-align: center;
-    margin-top: 40px; /* Espacio para separarlo del último carrusel */
+    padding: 20px 50px; border-top: 1px solid #333;
+    text-align: center; margin-top: 40px;
 }
+.footer-links { margin-bottom: 15px; }
+.footer-links a { color: #808080; text-decoration: none; margin: 0 15px; font-size: 0.9rem; }
+.footer-links a:hover { color: white; }
+.copyright { color: #808080; font-size: 0.8rem; }
 
-.footer-links {
-    margin-bottom: 15px;
-}
-
-.footer-links a {
-    color: #808080; /* Un gris para que no destaque tanto */
-    text-decoration: none;
-    margin: 0 15px; /* Espacio entre los enlaces */
-    font-size: 0.9rem;
-}
-
-.footer-links a:hover {
-    color: white; /* Resalta al pasar el mouse */
-}
-
-.copyright {
-    color: #808080;
-    font-size: 0.8rem;
-}
-
-
+/* --- DISEÑO RESPONSIVO --- */
 @media screen and (max-width: 768px) {
+    .main-header { flex-direction: column; padding: 15px 20px; }
+    .nav-links { padding: 0; margin-top: 15px; }
+    .nav-links li { margin: 0 10px; }
+    .hero-section { padding: 0 20px; }
+    .hero-info h2 { font-size: 2rem; }
+    .hero-info p { font-size: 1rem; }
+    .hero-info button { padding: 10px 20px; font-size: 1rem; }
+    .movies-row { padding: 20px; }
+    .movie-item img { width: 150px; height: 225px; }
+    .arrow { display: none; }
+    .footer-links { flex-direction: column; }
+    .footer-links a { margin: 5px 0; }
+}
+/* --- ANIMACIONES --- */
 
-    /* --- Ajustes en el encabezado --- */
-    .main-header {
-        flex-direction: column; /* Pone el logo arriba y el menú abajo */
-        padding: 15px 20px;
+/* Definimos la animación "fadeIn" */
+@keyframes fadeIn {
+    /* Estado inicial: completamente transparente y ligeramente desplazado hacia arriba */
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-
-    .nav-links {
-        padding: 0;
-        margin-top: 15px; /* Espacio entre el logo y el menú */
-    }
-
-    .nav-links li {
-        margin: 0 10px; /* Reduce el espacio entre los links */
-    }
-
-    /* --- Ajustes en la sección Hero --- */
-    .hero-section {
-        padding: 0 20px; /* Reduce el padding lateral */
-    }
-
-    .hero-info h2 {
-        font-size: 2rem; /* Título más pequeño */
-    }
-
-    .hero-info p {
-        font-size: 1rem; /* Párrafo más pequeño */
-    }
-
-    .hero-info button {
-        padding: 10px 20px; /* Botones más pequeños */
-        font-size: 1rem;
-    }
-
-    /* --- Ajustes en las filas de películas --- */
-    .movies-row {
-        padding: 20px; /* Reduce el padding lateral */
-    }
-    
-    .movie-item img {
-        width: 150px; /* Pósters más pequeños */
-        height: 225px;
-    }
-
-    /* --- Ocultamos las flechas en móvil, ya que el scroll táctil es más natural --- */
-    .arrow {
-        display: none;
-    }
-
-    /* --- Ajustes en el Footer --- */
-    .footer-links {
-        display: flex;
-        flex-direction: column; /* Pone los links uno debajo del otro */
-    }
-
-    .footer-links a {
-        margin: 5px 0; /* Espacio vertical entre links */
+    /* Estado final: completamente visible y en su posición original */
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

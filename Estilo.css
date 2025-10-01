@@ -9,20 +9,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 /* --- ESTILOS GENERALES Y TEMA OSCURO --- */
 body {
-    background-color: #141414;
-    color: #ffffff;
-    font-family: 'Roboto', sans-serif; 
-    margin: 0;
-    padding: 0;
+    background-color: #141414; color: #ffffff;
+    font-family: 'Roboto', sans-serif; margin: 0; padding: 0;
 }
 
 /* --- ENCABEZADO Y NAVEGACIÓN --- */
-.main-header {
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+.main-header { padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; }
 .logo img { height: 35px; }
 .nav-links { list-style: none; display: flex; }
 .nav-links li { margin-left: 20px; }
@@ -30,32 +22,18 @@ body {
 
 /* --- SECCIÓN HERO (PELÍCULA DESTACADA) --- */
 .hero-section {
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    padding: 0 50px;
+    height: 60vh; display: flex; align-items: center; padding: 0 50px;
     background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('https://image.tmdb.org/t/p/original/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg');
-    background-size: cover;
-    background-position: center top;
+    background-size: cover; background-position: center top;
 }
 .hero-info { max-width: 500px; }
-.hero-info h2 {    font-size: 3rem;
-    margin-bottom: 20px;
-    animation: fadeIn 1s ease-out; /* Aplica la animación */
-}
-.hero-info p { font-size: 1.2rem;
-    line-height: 1.5;
-    margin-bottom: 30px;
-    animation: fadeIn 1s ease-out 0.3s; /* Aparece 0.3s después */
-    animation-fill-mode: backwards; /* Mantiene el estado inicial antes de empezar */
-}
- 
+.hero-info h2 { font-size: 3rem; margin-bottom: 20px; animation: fadeIn 1s ease-out; }
+.hero-info p { font-size: 1.2rem; line-height: 1.5; margin-bottom: 30px; animation: fadeIn 1s ease-out 0.3s; animation-fill-mode: backwards; }
 .hero-info button {
-    background-color: white; color: black; border: none; padding: 15px 30px;
-    border-radius: 5px; font-size: 1.1rem; font-weight: bold; cursor: pointer;
-    margin-right: 15px; transition: background-color 0.3s;
-    animation: fadeIn 1s ease-out 0.6s; /* Aparece 0.6s después */
-    animation-fill-mode: backwards;
+    background-color: white; color: black; border: none; padding: 15px 30px; border-radius: 5px;
+    font-size: 1.1rem; font-weight: bold; cursor: pointer; margin-right: 15px;
+    transition: background-color 0.3s; animation: fadeIn 1s ease-out 0.6s; animation-fill-mode: backwards;
+    display: inline-flex; align-items: center; gap: 10px;
 }
 .hero-info button:hover { background-color: rgba(255, 255, 255, 0.8); }
 .hero-info button:last-of-type { background-color: rgba(109, 109, 110, 0.7); color: white; }
@@ -64,36 +42,33 @@ body {
 /* --- FILAS DE PELÍCULAS --- */
 .movies-row { padding: 20px 50px; }
 .carousel { position: relative; }
-.movies-container {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 20px;
-    scrollbar-width: none; /* Oculta scrollbar en Firefox */
-}
-.movies-container::-webkit-scrollbar { display: none; } /* Oculta scrollbar en Chrome/Safari */
-
-/* --- ESTILO PARA CADA PELÍCULA --- */
+.movies-container { display: flex; overflow-x: auto; overflow-y: hidden; padding-bottom: 20px; scrollbar-width: none; }
+.movies-container::-webkit-scrollbar { display: none; }
 .movie-item { margin-right: 10px; transition: transform 0.2s; }
 .movie-item img { width: 200px; height: 300px; border-radius: 5px; }
 .movie-item:hover { transform: scale(1.1); cursor: pointer; }
-
-/* --- FLECHAS DEL CARRUSEL --- */
-.arrow {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5); color: white; border: none;
-    font-size: 3rem; padding: 0 10px; height: 300px; cursor: pointer;
-    z-index: 10; opacity: 0; transition: opacity 0.3s;
-}
+.arrow { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 3rem; padding: 0 10px; height: 300px; cursor: pointer; z-index: 10; opacity: 0; transition: opacity 0.3s; }
 .carousel:hover .arrow { opacity: 1; }
 .left-arrow { left: 0; }
 .right-arrow { right: 0; }
 
+/* --- MODAL DE VIDEO --- */
+.modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); }
+.modal-content { background-color: #141414; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 800px; position: relative; }
+.close-button { color: #aaa; position: absolute; top: 10px; right: 25px; font-size: 35px; font-weight: bold; }
+.close-button:hover, .close-button:focus { color: white; text-decoration: none; cursor: pointer; }
+
+/* --- PÁGINA DE PLANES Y TABLA --- */
+.plans-container { padding: 40px 50px; text-align: center; }
+.plans-table { width: 100%; max-width: 900px; margin: 40px auto; border-collapse: collapse; }
+.plans-table caption { caption-side: bottom; padding: 15px; font-size: 0.9rem; color: #808080; }
+.plans-table th, .plans-table td { padding: 20px; border-bottom: 1px solid #333; }
+.plans-table thead th { font-size: 1.5rem; color: #e50914; }
+.plans-table tbody th { text-align: left; }
+.plans-table .fa-check { color: #00b300; font-size: 1.5rem; }
+
 /* --- PIE DE PÁGINA --- */
-.main-footer {
-    padding: 20px 50px; border-top: 1px solid #333;
-    text-align: center; margin-top: 40px;
-}
+.main-footer { padding: 20px 50px; border-top: 1px solid #333; text-align: center; margin-top: 40px; }
 .footer-links { margin-bottom: 15px; }
 .footer-links a { color: #808080; text-decoration: none; margin: 0 15px; font-size: 0.9rem; }
 .footer-links a:hover { color: white; }
@@ -113,19 +88,12 @@ body {
     .arrow { display: none; }
     .footer-links { flex-direction: column; }
     .footer-links a { margin: 5px 0; }
+    .plans-table th, .plans-table td { padding: 10px; }
+    .plans-table thead th { font-size: 1.1rem; }
 }
-/* --- ANIMACIONES --- */
 
-/* Definimos la animación "fadeIn" */
+/* --- ANIMACIONES --- */
 @keyframes fadeIn {
-    /* Estado inicial: completamente transparente y ligeramente desplazado hacia arriba */
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    /* Estado final: completamente visible y en su posición original */
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

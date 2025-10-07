@@ -1,19 +1,27 @@
 <?php
+// 1. INICIAMOS LA SESIÓN
+session_start();
+
+// 2. VERIFICAMOS SI EL USUARIO HA INICIADO SESIÓN
+// Si la variable de sesión 'usuario' no existe, significa que no ha iniciado sesión
+if (!isset($_SESSION['usuario'])) {
+    // Lo redirigimos a la página de login
+    header('Location: login.php');
+    exit(); // Es importante terminar la ejecución del script aquí
+}
+
+// Si la sesión sí existe, el resto de la página se cargará normalmente.
+
 // Simulamos una base de datos de películas con un array en PHP
 $mi_lista = [
     ["titulo" => "Película 1", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+1"],
     ["titulo" => "Película 2", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+2"],
     ["titulo" => "Película 3", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+3"],
-    ["titulo" => "Película 4", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+4"],
-    ["titulo" => "Película 5", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+5"],
 ];
 $tendencias = [
     ["titulo" => "Película A", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+A"],
     ["titulo" => "Película B", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+B"],
     ["titulo" => "Película C", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+C"],
-    ["titulo" => "Película D", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+D"],
-    ["titulo" => "Película E", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+E"],
-    ["titulo" => "Película F", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+F"],
 ];
 ?>
 <!DOCTYPE html>

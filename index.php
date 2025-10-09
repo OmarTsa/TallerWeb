@@ -3,16 +3,12 @@
 session_start();
 
 // 2. VERIFICAMOS SI EL USUARIO HA INICIADO SESIÓN
-// Si la variable de sesión 'usuario' no existe, significa que no ha iniciado sesión
 if (!isset($_SESSION['usuario'])) {
-    // Lo redirigimos a la página de login
     header('Location: login.php');
-    exit(); // Es importante terminar la ejecución del script aquí
+    exit();
 }
 
-// Si la sesión sí existe, el resto de la página se cargará normalmente.
-
-// Simulamos una base de datos de películas con un array en PHP
+// Simulamos los datos de las películas
 $mi_lista = [
     ["titulo" => "Película 1", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+1"],
     ["titulo" => "Película 2", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+2"],
@@ -30,21 +26,17 @@ $tendencias = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clon de Netflix</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="Estilo.css">
 </head>
 <body>
 
     <header class="main-header">
         <nav>
-            <a href="index.php" class="logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Logo de Netflix">
-            </a>
+            <a href="index.php" class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Logo de Netflix"></a>
             <ul class="nav-links">
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="#">Series</a></li>
@@ -52,6 +44,10 @@ $tendencias = [
                 <li><a href="planes.php">Planes</a></li>
             </ul>
         </nav>
+        <div class="user-menu">
+            <span>Bienvenido, <?= htmlspecialchars($_SESSION['usuario']) ?></span>
+            <a href="logout.php" class="logout-link">Cerrar Sesión</a>
+        </div>
     </header>
     
     <main>
@@ -70,9 +66,7 @@ $tendencias = [
                 <button class="arrow left-arrow">‹</button>
                 <div class="movies-container">
                     <?php foreach ($mi_lista as $pelicula): ?>
-                        <div class="movie-item">
-                            <img src="<?= htmlspecialchars($pelicula['poster']) ?>" alt="<?= htmlspecialchars($pelicula['titulo']) ?>">
-                        </div>
+                        <div class="movie-item"><img src="<?= htmlspecialchars($pelicula['poster']) ?>" alt="<?= htmlspecialchars($pelicula['titulo']) ?>"></div>
                     <?php endforeach; ?>
                 </div>
                 <button class="arrow right-arrow">›</button>
@@ -85,9 +79,7 @@ $tendencias = [
                 <button class="arrow left-arrow">‹</button>
                 <div class="movies-container">
                     <?php foreach ($tendencias as $pelicula): ?>
-                        <div class="movie-item">
-                            <img src="<?= htmlspecialchars($pelicula['poster']) ?>" alt="<?= htmlspecialchars($pelicula['titulo']) ?>">
-                        </div>
+                        <div class="movie-item"><img src="<?= htmlspecialchars($pelicula['poster']) ?>" alt="<?= htmlspecialchars($pelicula['titulo']) ?>"></div>
                     <?php endforeach; ?>
                 </div>
                 <button class="arrow right-arrow">›</button>
@@ -98,19 +90,13 @@ $tendencias = [
     <div id="video-modal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <video id="movie-video" width="100%" controls>
-                <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
+            <video id="movie-video" width="100%" controls><source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4"></video>
         </div>
     </div>
 
     <footer class="main-footer">
         <div class="footer-links">
-            <a href="#">Preguntas frecuentes</a>
-            <a href="#">Centro de ayuda</a>
-            <a href="#">Términos de uso</a>
-            <a href="#">Privacidad</a>
+            <a href="#">Preguntas frecuentes</a><a href="#">Centro de ayuda</a><a href="#">Términos de uso</a><a href="#">Privacidad</a>
         </div>
         <p class="copyright">&copy; 2025 Mi Netflix Clon. Todos los derechos reservados.</p>
     </footer>

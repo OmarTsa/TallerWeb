@@ -1,0 +1,31 @@
+
+{
+  "mi_lista": [
+    {
+      "titulo": "Interstellar",
+      "poster_url": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+    },
+    {
+      "titulo": "Pulp Fiction",
+      "poster_url": "https://image.tmdb.org/t/p/w500/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg"
+    },
+    {
+      "titulo": "The Dark Knight",
+      "poster_url": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+    }
+  ],
+  "tendencias": [
+    {
+      "titulo": "Dune",
+      "poster_url": "https://image.tmdb.org/t/p/w500/8b8R8l88Qje9dn9OE8soXRmfuXg.jpg"
+    },
+    {
+      "titulo": "The Super Mario Bros. Movie",
+      "poster_url": "https://image.tmdb.org/t/p/w500/lWqjXgut48IK5f5IRbDBAoO2Epp.jpg"
+    },
+    {
+      "titulo": "Oppenheimer",
+      "poster_url": "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg"
+    }
+  ]
+}

@@ -8,17 +8,13 @@ if (!isset($_SESSION['usuario'])) {
     exit();
 }
 
-// Simulamos los datos de las películas
-$mi_lista = [
-    ["titulo" => "Película 1", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+1"],
-    ["titulo" => "Película 2", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+2"],
-    ["titulo" => "Película 3", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+3"],
-];
-$tendencias = [
-    ["titulo" => "Película A", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+A"],
-    ["titulo" => "Película B", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+B"],
-    ["titulo" => "Película C", "poster" => "https://via.placeholder.com/200x300?text=Pelicula+C"],
-];
+// 3. LEEMOS LOS DATOS DESDE EL ARCHIVO JSON
+$json_data = file_get_contents('peliculas.json');
+$peliculas = json_decode($json_data, true);
+
+// Asignamos las películas a las variables correspondientes
+$mi_lista = $peliculas['mi_lista'];
+$tendencias = $peliculas['tendencias'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -66,7 +62,7 @@ $tendencias = [
                 <button class="arrow left-arrow">‹</button>
                 <div class="movies-container">
                     <?php foreach ($mi_lista as $pelicula): ?>
-                        <div class="movie-item"><img src="<?= htmlspecialchars($pelicula['poster']) ?>" alt="<?= htmlspecialchars($pelicula['titulo']) ?>"></div>
+                        <div class="movie-item"><img src="<?= htmlspecialchars($pelicula['poster_url']) ?>" alt="<?= htmlspecialchars($pelicula['titulo']) ?>"></div>
                     <?php endforeach; ?>
                 </div>
                 <button class="arrow right-arrow">›</button>
@@ -79,7 +75,7 @@ $tendencias = [
                 <button class="arrow left-arrow">‹</button>
                 <div class="movies-container">
                     <?php foreach ($tendencias as $pelicula): ?>
-                        <div class="movie-item"><img src="<?= htmlspecialchars($pelicula['poster']) ?>" alt="<?= htmlspecialchars($pelicula['titulo']) ?>"></div>
+                        <div class="movie-item"><img src="<?= htmlspecialchars($pelicula['poster_url']) ?>" alt="<?= htmlspecialchars($pelicula['titulo']) ?>"></div>
                     <?php endforeach; ?>
                 </div>
                 <button class="arrow right-arrow">›</button>

@@ -28,12 +28,17 @@ body { background-color: #141414; color: #ffffff; font-family: 'Roboto', sans-se
 .movies-container { display: flex; overflow-x: auto; padding-bottom: 20px; scrollbar-width: none; }
 .movies-container::-webkit-scrollbar { display: none; }
 .movie-item { margin-right: 10px; transition: transform 0.2s; }
-.movie-item img { width: 200px; height: 300px; border-radius: 5px; }
+.movie-item img { width: 200px; height: 300px; border-radius: 5px; object-fit: cover; }
 .movie-item:hover { transform: scale(1.1); cursor: pointer; }
 .arrow { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 3rem; padding: 0 10px; height: 300px; cursor: pointer; z-index: 10; opacity: 0; transition: opacity 0.3s; }
 .carousel:hover .arrow { opacity: 1; }
 .left-arrow { left: 0; }
 .right-arrow { right: 0; }
+
+/* --- PÁGINA EXPLORAR CON GRID --- */
+.explore-container { padding: 40px 50px; }
+.explore-container h1 { margin-bottom: 30px; font-size: 2.5rem; }
+.movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
 
 /* --- MODAL DE VIDEO --- */
 .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); }
@@ -49,11 +54,14 @@ body { background-color: #141414; color: #ffffff; font-family: 'Roboto', sans-se
 .plans-table thead th { font-size: 1.5rem; color: #e50914; }
 .plans-table .fa-check { color: #00b300; font-size: 1.5rem; }
 
-/* --- FORMULARIO DE LOGIN --- */
-.login-container { background-color: rgba(0,0,0,0.8); padding: 60px; border-radius: 5px; width: 100%; max-width: 450px; }
+/* --- FORMULARIO DE LOGIN Y REGISTRO --- */
+.login-container { background-color: rgba(0,0,0,0.8); padding: 60px; border-radius: 5px; width: 100%; max-width: 450px; box-sizing: border-box; }
 .login-container h1 { margin-bottom: 30px; }
 .login-form .form-group input { width: 100%; padding: 16px; margin-bottom: 20px; border: none; border-radius: 5px; background-color: #333; color: white; font-size: 1rem; box-sizing: border-box; }
 .login-form .btn-submit { width: 100%; padding: 16px; border: none; border-radius: 5px; background-color: #e50914; color: white; font-size: 1.1rem; font-weight: bold; cursor: pointer; margin-top: 20px; }
+.signup-link { color: #8c8c8c; margin-top: 30px; text-align: center; }
+.signup-link a { color: white; text-decoration: none; }
+.signup-link a:hover { text-decoration: underline; }
 
 /* --- FOOTER --- */
 .main-footer { padding: 20px 50px; border-top: 1px solid #333; text-align: center; margin-top: 40px; }
@@ -65,14 +73,13 @@ body { background-color: #141414; color: #ffffff; font-family: 'Roboto', sans-se
 /* --- DISEÑO RESPONSIVO --- */
 @media screen and (max-width: 768px) {
     .main-header { flex-direction: column; padding: 15px 20px; text-align: center; }
+    .nav-links { justify-content: center; flex-wrap: wrap; }
     .user-menu { margin-top: 15px; }
-    .nav-links { padding: 0; margin-top: 15px; }
-    .nav-links li { margin: 0 10px; }
     .hero-section { padding: 0 20px; }
     .hero-info h2 { font-size: 2rem; }
     .hero-info p { font-size: 1rem; }
     .hero-info button { padding: 10px 20px; font-size: 1rem; }
-    .movies-row, .plans-container { padding: 20px; }
+    .movies-row, .plans-container, .explore-container { padding: 20px; }
     .movie-item img { width: 150px; height: 225px; }
     .arrow { display: none; }
     .footer-links { flex-direction: column; }

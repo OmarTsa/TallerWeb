@@ -35,8 +35,7 @@ $tendencias = $peliculas['tendencias'];
             <a href="index.php" class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Logo de Netflix"></a>
             <ul class="nav-links">
                 <li><a href="index.php">Inicio</a></li>
-                <li><a href="#">Series</a></li>
-                <li><a href="#">Películas</a></li>
+                <li><a href="explorar.php">Explorar</a></li>
                 <li><a href="planes.php">Planes</a></li>
             </ul>
         </nav>
@@ -49,7 +48,7 @@ $tendencias = $peliculas['tendencias'];
     <main>
         <section class="hero-section">
             <div class="hero-info">
-                <h2>Nombre de la Película Destacada</h2>
+                <h2>Película Destacada</h2>
                 <p>Esta es una breve descripción de la película o serie que estamos destacando.</p>
                 <button><i class="fa-solid fa-play"></i> <span>Reproducir</span></button>
                 <button><i class="fa-solid fa-circle-info"></i> <span>Más Información</span></button>

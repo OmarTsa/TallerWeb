@@ -1,18 +1,11 @@
 <?php
-// 1. INICIAMOS LA SESIÓN
 session_start();
-
-// 2. VERIFICAMOS SI EL USUARIO HA INICIADO SESIÓN
 if (!isset($_SESSION['usuario'])) {
     header('Location: login.php');
     exit();
 }
-
-// 3. LEEMOS LOS DATOS DESDE EL ARCHIVO JSON
 $json_data = file_get_contents('peliculas.json');
 $peliculas = json_decode($json_data, true);
-
-// Asignamos las películas a las variables correspondientes
 $mi_lista = $peliculas['mi_lista'];
 $tendencias = $peliculas['tendencias'];
 ?>
@@ -38,6 +31,10 @@ $tendencias = $peliculas['tendencias'];
                 <li><a href="explorar.php">Explorar</a></li>
                 <li><a href="planes.php">Planes</a></li>
             </ul>
+            <form action="buscar.php" method="GET" class="search-form">
+                <input type="search" name="q" placeholder="Buscar títulos...">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
         </nav>
         <div class="user-menu">
             <span>Bienvenido, <?= htmlspecialchars($_SESSION['usuario']) ?></span>

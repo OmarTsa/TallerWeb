@@ -4,16 +4,29 @@ if (!isset($_SESSION['usuario'])) {
     header('Location: login.php');
     exit();
 }
+
+$termino_busqueda = isset($_GET['q']) ? trim($_GET['q']) : '';
 $json_data = file_get_contents('peliculas.json');
 $peliculas_data = json_decode($json_data, true);
 $todas_las_peliculas = array_merge($peliculas_data['mi_lista'], $peliculas_data['tendencias']);
+$resultados = [];
+
+if (!empty($termino_busqueda)) {
+    foreach ($todas_las_peliculas as $pelicula) {
+        if (stristr($pelicula['titulo'], $termino_busqueda)) {
+            $resultados[] = $pelicula;
+        }
+    }
+} else {
+    $resultados = $todas_las_peliculas;
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explorar - Clon de Netflix</title>
+    <title>Resultados de Búsqueda - Clon de Netflix</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -31,7 +44,7 @@ $todas_las_peliculas = array_merge($peliculas_data['mi_lista'], $peliculas_data[
                 <li><a href="planes.php">Planes</a></li>
             </ul>
              <form action="buscar.php" method="GET" class="search-form">
-                <input type="search" name="q" placeholder="Buscar títulos...">
+                <input type="search" name="q" value="<?= htmlspecialchars($termino_busqueda) ?>" placeholder="Buscar títulos...">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </nav>
@@ -42,13 +55,18 @@ $todas_las_peliculas = array_merge($peliculas_data['mi_lista'], $peliculas_data[
     </header>
     
     <main class="explore-container">
-        <h1>Explorar Catálogo</h1>
+        <h1>Resultados para "<?= htmlspecialchars($termino_busqueda) ?>"</h1>
+        
         <div class="movie-grid">
-            <?php foreach ($todas_las_peliculas as $pelicula): ?>
-                <div class="movie-item">
-                    <img src="<?= htmlspecialchars($pelicula['poster_url']) ?>" alt="<?= htmlspecialchars($pelicula['titulo']) ?>">
-                </div>
-            <?php endforeach; ?>
+            <?php if (!empty($resultados)): ?>
+                <?php foreach ($resultados as $pelicula): ?>
+                    <div class="movie-item">
+                        <img src="<?= htmlspecialchars($pelicula['poster_url']) ?>" alt="<?= htmlspecialchars($pelicula['titulo']) ?>">
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No se encontraron resultados para tu búsqueda.</p>
+            <?php endif; ?>
         </div>
     </main>
 

@@ -1,4 +1,3 @@
-
 {
   "mi_lista": [
     {
@@ -8,10 +7,6 @@
     {
       "titulo": "Pulp Fiction",
       "poster_url": "https://image.tmdb.org/t/p/w500/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg"
-    },
-    {
-      "titulo": "The Dark Knight",
-      "poster_url": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
     }
   ],
   "tendencias": [

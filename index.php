@@ -1,13 +1,20 @@
 <?php
+// 1. INICIAMOS LA SESIÓN
 session_start();
+
+// 2. VERIFICAMOS SI EL USUARIO HA INICIADO SESIÓN
 if (!isset($_SESSION['usuario'])) {
     header('Location: login.php');
     exit();
 }
+
+// 3. LEEMOS LOS DATOS DESDE EL ARCHIVO JSON
 $json_data = file_get_contents('peliculas.json');
 $peliculas = json_decode($json_data, true);
-$mi_lista = $peliculas['mi_lista'];
-$tendencias = $peliculas['tendencias'];
+
+// Asignamos las películas a las variables correspondientes (con verificación por si el JSON está mal formado)
+$mi_lista = isset($peliculas['mi_lista']) ? $peliculas['mi_lista'] : [];
+$tendencias = isset($peliculas['tendencias']) ? $peliculas['tendencias'] : [];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -90,7 +97,7 @@ $tendencias = $peliculas['tendencias'];
         <div class="footer-links">
             <a href="#">Preguntas frecuentes</a><a href="#">Centro de ayuda</a><a href="#">Términos de uso</a><a href="#">Privacidad</a>
         </div>
-        <p class="copyright">&copy; 2025 Mi Netflix Clon. Todos los derechos reservados.</p>
+        <p class="copyright">&copy; <?= date("Y") ?> Mi Netflix Clon. Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js"></script>

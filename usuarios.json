@@ -1,6 +1,7 @@
 [
-  {
-    "email": "alumno@utp.edu.pe",
-    "password": "12345"
-  }
+    [],
+    {
+        "email": "alumno@utp.edu.pe",
+        "password": "$2y$10$tMqHW2I60gaZZ1r1d2A26et4J9qTB7.NBbN8Etcc.8ddfJEIP5wrS"
+    }
 ]

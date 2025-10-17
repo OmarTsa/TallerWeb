@@ -13,6 +13,15 @@
 
     <div class="login-container">
         <h1>Regístrate</h1>
+
+         <?php
+        session_start(); 
+        if (isset($_SESSION['error_registro'])) {
+            echo '<p class="error-message">' . htmlspecialchars($_SESSION['error_registro']) . '</p>';
+            unset($_SESSION['error_registro']); 
+        }
+        ?>
+
         <form action="procesar_registro.php" method="POST" class="login-form">
             <div class="form-group">
                 <input type="email" name="email" placeholder="Email" required>

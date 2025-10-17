@@ -13,6 +13,15 @@
 
     <div class="login-container">
         <h1>Iniciar Sesión</h1>
+
+        <?php
+        session_start(); 
+        if (isset($_SESSION['error_login'])) {
+            echo '<p class="error-message">' . htmlspecialchars($_SESSION['error_login']) . '</p>';
+            unset($_SESSION['error_login']); 
+        }
+        ?>
+
         <form action="validar.php" method="POST" class="login-form">
             <div class="form-group">
                 <input type="email" name="email" placeholder="Email" required>

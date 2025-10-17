@@ -4,27 +4,13 @@ if (!isset($_SESSION['usuario'])) {
     header('Location: login.php');
     exit();
 }
-
-$termino_busqueda = isset($_GET['q']) ? trim($_GET['q']) : '';
-$json_data = file_get_contents('peliculas.json');
-$peliculas_data = json_decode($json_data, true);
-$todas_las_peliculas = array_merge(isset($peliculas_data['mi_lista']) ? $peliculas_data['mi_lista'] : [], isset($peliculas_data['tendencias']) ? $peliculas_data['tendencias'] : []);
-$resultados = [];
-
-if (!empty($termino_busqueda)) {
-    foreach ($todas_las_peliculas as $pelicula) {
-        if (stristr($pelicula['titulo'], $termino_busqueda) !== false) {
-            $resultados[] = $pelicula;
-        }
-    }
-} // No ponemos 'else' para que si no hay búsqueda, simplemente no muestre resultados
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados de Búsqueda - Clon de Netflix</title>
+    <title>Nuestros Planes - Clon de Netflix</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -34,7 +20,7 @@ if (!empty($termino_busqueda)) {
 <body>
 
     <header class="main-header">
-        <nav>
+         <nav>
             <a href="index.php" class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Logo de Netflix"></a>
             <ul class="nav-links">
                 <li><a href="index.php">Inicio</a></li>
@@ -42,7 +28,7 @@ if (!empty($termino_busqueda)) {
                 <li><a href="planes.php">Planes</a></li>
             </ul>
              <form action="buscar.php" method="GET" class="search-form">
-                <input type="search" name="q" value="<?= htmlspecialchars($termino_busqueda) ?>" placeholder="Buscar títulos...">
+                <input type="search" name="q" placeholder="Buscar títulos...">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </nav>
@@ -52,23 +38,55 @@ if (!empty($termino_busqueda)) {
         </div>
     </header>
     
-    <main class="explore-container">
-        <h1>Resultados para "<?= htmlspecialchars($termino_busqueda) ?>"</h1>
+    <main class="plans-container">
+        <h1>Elige el plan ideal para ti</h1>
         
-        <div class="movie-grid">
-            <?php if (!empty($resultados)): ?>
-                <?php foreach ($resultados as $pelicula): ?>
-                    <div class="movie-item">
-                        <img src="<?= htmlspecialchars($pelicula['poster_url']) ?>" alt="<?= htmlspecialchars($pelicula['titulo']) ?>">
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>No se encontraron películas que coincidan con tu búsqueda.</p>
-            <?php endif; ?>
-        </div>
+        <table class="plans-table">
+            <caption>Comparación de Planes de Suscripción</caption>
+            <thead>
+                <tr>
+                    <th>Características</th>
+                    <th>Básico</th>
+                    <th>Estándar</th>
+                    <th>Premium</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Precio mensual</td>
+                    <td>S/ 24.90</td>
+                    <td>S/ 34.90</td>
+                    <td>S/ 44.90</td>
+                </tr>
+                <tr>
+                    <td>Calidad de video</td>
+                    <td>Buena (480p)</td>
+                    <td>Mejor (1080p)</td>
+                    <td>Óptima (4K+HDR)</td>
+                </tr>
+                <tr>
+                    <td>Dispositivos a la vez</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Descargas</td>
+                    <td><i class="fa-solid fa-check"></i></td>
+                    <td><i class="fa-solid fa-check"></i></td>
+                    <td><i class="fa-solid fa-check"></i></td>
+                </tr>
+                 <tr>
+                    <td>Sin anuncios</td>
+                    <td><i class="fa-solid fa-check"></i></td>
+                    <td><i class="fa-solid fa-check"></i></td>
+                    <td><i class="fa-solid fa-check"></i></td>
+                </tr>
+            </tbody>
+        </table>
     </main>
-
-    <footer class="main-footer">
+    
+     <footer class="main-footer">
         <div class="footer-links">
             <a href="#">Preguntas frecuentes</a><a href="#">Centro de ayuda</a><a href="#">Términos de uso</a><a href="#">Privacidad</a>
         </div>

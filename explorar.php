@@ -6,7 +6,7 @@ if (!isset($_SESSION['usuario'])) {
 }
 $json_data = file_get_contents('peliculas.json');
 $peliculas_data = json_decode($json_data, true);
-$todas_las_peliculas = array_merge($peliculas_data['mi_lista'], $peliculas_data['tendencias']);
+$todas_las_peliculas = array_merge(isset($peliculas_data['mi_lista']) ? $peliculas_data['mi_lista'] : [], isset($peliculas_data['tendencias']) ? $peliculas_data['tendencias'] : []);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -44,11 +44,15 @@ $todas_las_peliculas = array_merge($peliculas_data['mi_lista'], $peliculas_data[
     <main class="explore-container">
         <h1>Explorar Catálogo</h1>
         <div class="movie-grid">
-            <?php foreach ($todas_las_peliculas as $pelicula): ?>
-                <div class="movie-item">
-                    <img src="<?= htmlspecialchars($pelicula['poster_url']) ?>" alt="<?= htmlspecialchars($pelicula['titulo']) ?>">
-                </div>
-            <?php endforeach; ?>
+            <?php if (!empty($todas_las_peliculas)): ?>
+                <?php foreach ($todas_las_peliculas as $pelicula): ?>
+                    <div class="movie-item">
+                        <img src="<?= htmlspecialchars($pelicula['poster_url']) ?>" alt="<?= htmlspecialchars($pelicula['titulo']) ?>">
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                 <p>No hay películas para mostrar.</p>
+            <?php endif; ?>
         </div>
     </main>
 
@@ -56,7 +60,7 @@ $todas_las_peliculas = array_merge($peliculas_data['mi_lista'], $peliculas_data[
         <div class="footer-links">
             <a href="#">Preguntas frecuentes</a><a href="#">Centro de ayuda</a><a href="#">Términos de uso</a><a href="#">Privacidad</a>
         </div>
-        <p class="copyright">&copy; 2025 Mi Netflix Clon. Todos los derechos reservados.</p>
+        <p class="copyright">&copy; <?= date("Y") ?> Mi Netflix Clon. Todos los derechos reservados.</p>
     </footer>
 
 </body>

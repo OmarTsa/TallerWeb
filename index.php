@@ -1,7 +1,7 @@
 <?php
 // 1. INICIAMOS LA SESIÓN
 session_start();
-// 2. VERIFICAMOS SI EL USUARIO HA INICIADO SESIÓN
+
 // 2. VERIFICAMOS SI EL USUARIO HA INICIADO SESIÓN
 if (!isset($_SESSION['usuario'])) {
     header('Location: login.php');

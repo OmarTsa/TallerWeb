@@ -105,15 +105,3 @@ $tendencias = isset($peliculas['tendencias']) ? $peliculas['tendencias'] : [];
 </html>
 
 
-
-
-    <footer class="main-footer">
-        <div class="footer-links">
-            <a href="#">Preguntas frecuentes</a><a href="#">Centro de ayuda</a><a href="#">Términos de uso</a><a href="#">Privacidad</a>
-        </div>
-        <p class="copyright">&copy; <?= date("Y") ?> Mi Netflix Clon. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>

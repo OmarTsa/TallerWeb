@@ -78,7 +78,7 @@ if (!empty($termino_busqueda)) {
 </body>
 </html>
 
- <footer class="main-footer">
+    <footer class="main-footer">
         <div class="footer-links">
             <a href="#">Preguntas frecuentes</a><a href="#">Centro de ayuda</a><a href="#">Términos de uso</a><a href="#">Privacidad</a>
         </div>

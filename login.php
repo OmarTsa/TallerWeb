@@ -36,3 +36,18 @@
 
 </body>
 </html>
+
+   <form action="validar.php" method="POST" class="login-form">
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Contraseña" required>
+            </div>
+            <button type="submit" class="btn-submit">Iniciar Sesión</button>
+        </form>
+        <p class="signup-link">¿No tienes una cuenta? <a href="registro.php">Regístrate ahora</a>.</p>
+    </div>
+
+</body>
+</html>

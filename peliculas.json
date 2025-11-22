@@ -11,20 +11,160 @@
     {
       "titulo": "The Dark Knight",
       "poster_url": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+    },
+    {
+      "titulo": "Inception",
+      "poster_url": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
+    },
+    {
+      "titulo": "The Matrix",
+      "poster_url": "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg"
+    },
+    {
+      "titulo": "Forrest Gump",
+      "poster_url": "https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg"
+    },
+    {
+      "titulo": "Top Gun: Maverick",
+      "poster_url": "https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg"
+    },
+    {
+      "titulo": "Spider-Man: Across the Spider-Verse",
+      "poster_url": "https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg"
+    },
+    {
+      "titulo": "Jurassic World Dominion",
+      "poster_url": "https://image.tmdb.org/t/p/w500/kAVRgw7GgK1CfYEJq8ME6EvRIgU.jpg"
+    },
+    {
+      "titulo": "Star Wars: A New Hope",
+      "poster_url": "https://image.tmdb.org/t/p/w500/tvSlBzAdRE29bZe5yYWrJ2ds137.jpg"
+    },
+    {
+      "titulo": "El Padrino",
+      "poster_url": "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
+    },
+    {
+      "titulo": "El Señor de los Anillos: La Comunidad del Anillo",
+      "poster_url": "https://image.tmdb.org/t/p/w500/6oom5QZlA9fJlYJh091awleAsLj.jpg"
+    },
+    {
+      "titulo": "Volver al Futuro",
+      "poster_url": "https://image.tmdb.org/t/p/w500/fNOH9f1aA7XRTzl1sCIKNfTp66y.jpg"
+    },
+    {
+      "titulo": "Titanic",
+      "poster_url": "https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg"
+    },
+    {
+      "titulo": "Gladiador",
+      "poster_url": "https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg"
+    },
+    {
+      "titulo": "Avengers: Endgame",
+      "poster_url": "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg"
+    },
+    {
+      "titulo": "El Rey León",
+      "poster_url": "https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg"
+    },
+    {
+      "titulo": "Parásitos",
+      "poster_url": "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+    },
+    {
+      "titulo": "Joker",
+      "poster_url": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+    },
+    {
+      "titulo": "Coco",
+      "poster_url": "https://image.tmdb.org/t/p/w500/vnRthEZz16Q9VWfY5nhkYw9RiUK.jpg"
     }
   ],
   "tendencias": [
     {
       "titulo": "Dune",
-      "poster_url": "https://image.tmdb.org/t/p/w500/8b8R8l88Qje9dn9OE8soXRmfuXg.jpg"
+      "poster_url": "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg"
     },
     {
       "titulo": "The Super Mario Bros. Movie",
-      "poster_url": "https://image.tmdb.org/t/p/w500/lWqjXgut48IK5f5IRbDBAoO2Epp.jpg"
+      "poster_url": "https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg"
     },
     {
       "titulo": "Oppenheimer",
       "poster_url": "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg"
+    },
+    {
+      "titulo": "Barbie",
+      "poster_url": "https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51QbG6j66pW.jpg"
+    },
+    {
+      "titulo": "Guardians of the Galaxy Vol. 3",
+      "poster_url": "https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg"
+    },
+    {
+      "titulo": "Bullet Train",
+      "poster_url": "https://image.tmdb.org/t/p/w500/tVxDe01Zy3kZqaZRNiXFGDICdZk.jpg"
+    },
+    {
+      "titulo": "Sonic the Hedgehog 2",
+      "poster_url": "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg"
+    },
+    {
+      "titulo": "Uncharted",
+      "poster_url": "https://image.tmdb.org/t/p/w500/rJHC1RUORuUhtfNb4Npclx0xnOf.jpg"
+    },
+    {
+      "titulo": "Prey",
+      "poster_url": "https://image.tmdb.org/t/p/w500/ujr5pztc1oitbe7ViMUOilFaJ7s.jpg"
+    },
+    {
+      "titulo": "M3GAN",
+      "poster_url": "https://image.tmdb.org/t/p/w500/xBl5AGw7HXZcv1nNXPlzGgO4Cfo.jpg"
+    },
+    {
+      "titulo": "Avatar: The Way of Water",
+      "poster_url": "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9TmNV.jpg"
+    },
+    {
+      "titulo": "Black Panther: Wakanda Forever",
+      "poster_url": "https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg"
+    },
+    {
+      "titulo": "The Batman",
+      "poster_url": "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg"
+    },
+    {
+      "titulo": "Fast X",
+      "poster_url": "https://image.tmdb.org/t/p/w500/fiVW06jE7z9YnO4trhaMEdclSiC.jpg"
+    },
+    {
+      "titulo": "John Wick: Chapter 4",
+      "poster_url": "https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF67UesT8e.jpg"
+    },
+    {
+      "titulo": "Mission: Impossible - Dead Reckoning",
+      "poster_url": "https://image.tmdb.org/t/p/w500/NNxYkU70HPurnNCSiCjYAmacwm.jpg"
+    },
+    {
+      "titulo": "The Little Mermaid",
+      "poster_url": "https://image.tmdb.org/t/p/w500/ym1dxyOk4jFcSl4Q2zmRrA5BEEN.jpg"
+    },
+    {
+      "titulo": "Elemental",
+      "poster_url": "https://image.tmdb.org/t/p/w500/4Y1WNkd88JXmGfhtWR7dmDAo1T2.jpg"
+    },
+    {
+      "titulo": "Indiana Jones and the Dial of Destiny",
+      "poster_url": "https://image.tmdb.org/t/p/w500/Af4bXE63pVsb2FzxW8hkQWBQQSl.jpg"
+    },
+    {
+      "titulo": "Transformers: Rise of the Beasts",
+      "poster_url": "https://image.tmdb.org/t/p/w500/gPbM0MK8CP8A174rmUwGsADNYKD.jpg"
+    },
+    {
+      "titulo": "Blue Beetle",
+      "poster_url": "https://image.tmdb.org/t/p/w500/mXLOHHc1Zeuwsl4xYKjKh2280oL.jpg"
     }
   ]
 }

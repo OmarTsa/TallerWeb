@@ -12,7 +12,7 @@ if (!isset($_SESSION['usuario'])) {
 $json_data = file_get_contents('peliculas.json');
 $peliculas = json_decode($json_data, true);
 
-// Asignamos las películas a las variables correspondientes (con verificación por si el JSON está mal formado)
+// Asignamos las películas a las variables correspondientes
 $mi_lista = isset($peliculas['mi_lista']) ? $peliculas['mi_lista'] : [];
 $tendencias = isset($peliculas['tendencias']) ? $peliculas['tendencias'] : [];
 ?>
@@ -33,6 +33,11 @@ $tendencias = isset($peliculas['tendencias']) ? $peliculas['tendencias'] : [];
     <header class="main-header">
         <nav>
             <a href="index.php" class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Logo de Netflix"></a>
+            
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="explorar.php">Explorar</a></li>
@@ -103,5 +108,3 @@ $tendencias = isset($peliculas['tendencias']) ? $peliculas['tendencias'] : [];
     <script src="script.js"></script>
 </body>
 </html>
-
-
